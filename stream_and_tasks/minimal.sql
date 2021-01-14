@@ -2,6 +2,9 @@
 -- https://stackoverflow.com/questions/59837417/is-there-a-way-to-force-run-a-snowflakes-task-now-before-the-next-scheduled-sl/65711613#65711613
 -- https://stackoverflow.com/questions/65710176/snowflake-schedule-a-script-sql-with-multiple-instructions-insert-delete-c/65711574#65711574
 
+-- Extra reading:
+-- https://medium.com/snowflake/visualizing-task-hierarchies-and-dependencies-in-snowflake-snowsight-d28298d0f0ed
+
 -- TODO: better permissions
 -- https://docs.snowflake.com/en/user-guide/tasks-intro.html#creating-a-task-administrator-role
 use role accountadmin;
