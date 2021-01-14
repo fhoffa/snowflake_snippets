@@ -67,3 +67,7 @@ order by ts desc;
 
 -- clean up?
 show tasks;
+alter task mytask_minute suspend;
+drop task mytask_minute;
+drop task mytask_minute_child1;
+drop task mytask_minute_child2;
