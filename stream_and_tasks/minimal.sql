@@ -1,3 +1,7 @@
+-- Referenced from:
+-- https://stackoverflow.com/questions/59837417/is-there-a-way-to-force-run-a-snowflakes-task-now-before-the-next-scheduled-sl/65711613#65711613
+-- https://stackoverflow.com/questions/65710176/snowflake-schedule-a-script-sql-with-multiple-instructions-insert-delete-c/65711574#65711574
+
 -- TODO: better permissions
 -- https://docs.snowflake.com/en/user-guide/tasks-intro.html#creating-a-task-administrator-role
 use role accountadmin;
@@ -7,9 +11,6 @@ use role sysadmin;
 -- stream so this task executes every minute, but only if there's new data
 create table just_timestamps_stream_table(value varchar);
 create stream just_timestamps_stream on table just_timestamps_stream_table;
-
--- our goal is to insert new timestamps here
-create or replace table just_timestamps(ts timestamp, note varchar);
 
 -- https://docs.snowflake.com/en/user-guide/tasks-intro.html
 create or replace task mytask_minute
@@ -32,6 +33,9 @@ limit 5;
 -- now let's add dependent tasks
 alter task mytask_minute suspend;
 
+-- our goal is to insert new timestamps here
+create or replace table just_timestamps(ts timestamp, note varchar);
+           
 create or replace task mytask_minute_child1
   warehouse = test_small
   after mytask_minute
