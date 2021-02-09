@@ -1,3 +1,6 @@
+Dynamic PIVOTs in SQL with Snowflake
+--
+
 See https://medium.com/@hoffa/dynamic-pivots-in-sql-with-snowflake-c763933987c
 
 Usage:
