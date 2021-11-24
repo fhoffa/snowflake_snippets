@@ -1,6 +1,8 @@
--- this will create two parallel child queries that take 10 seconds to execute
--- if they are executed in parallel, then they will insert values at the same time
--- event is triggered by inserting a value in a stream that is checked every minute
+-- This will create two parallel child queries that take 10 seconds to execute.
+-- If they are executed in parallel, then they will insert values at the same time.
+-- Event is triggered by inserting a value in a stream that is checked every minute.
+
+-- See https://stackoverflow.com/a/70100477/132438
 
 use role accountadmin;
 grant execute task on account to role sysadmin;
