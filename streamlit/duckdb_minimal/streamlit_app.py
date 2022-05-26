@@ -33,4 +33,4 @@ con = duckdb.connect(database=':memory:')
 df = con.execute("SELECT * FROM read_parquet('temp.parquet')").df()
 df
 
-st.write("check out this [post](https://medium.com/@hoffa/magic-data-apps-with-snowflake-streamlit-and-duckdb-c0dfc0d1fbe2")
+"More on https://medium.com/@hoffa/magic-data-apps-with-snowflake-streamlit-and-duckdb-c0dfc0d1fbe2"
