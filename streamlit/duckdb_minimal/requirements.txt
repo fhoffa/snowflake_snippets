@@ -1,0 +1,2 @@
+duckdb
+google-cloud-storage
